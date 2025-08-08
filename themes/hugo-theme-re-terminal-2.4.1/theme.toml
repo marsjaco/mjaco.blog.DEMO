@@ -1,7 +1,7 @@
 name = "mjacophoto.blog"
 license = "MIT"
 licenselink = "https://github.com/mirus-ua/hugo-theme-re-terminal/blob/main/LICENSE.md"
-description = "a photography showcase by marshall "mars" jacobsen"
+description = "a photography showcase by marshall jacobsen"
 homepage = "marsjaco.github.io/mjacophoto.blog"
 demosite = "marsjaco.github.io/mjacophoto.blog"
 tags = [
