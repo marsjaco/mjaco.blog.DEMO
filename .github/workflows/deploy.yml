@@ -3,6 +3,9 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches: [main]
+    
+env:
+  ACTIONS_STEP_DEBUG: true  # 👈 This enables step-level debug logs
 
 permissions:
   contents: read
@@ -14,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
