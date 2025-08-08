@@ -2,43 +2,46 @@ name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
-    branches: [main]
-    
-env:
-  ACTIONS_STEP_DEBUG: true  # 👈 This enables step-level debug logs
+    branches:
+      - main  # or your default branch
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+env:
+  HUGO_VERSION: '0.148.2'  # Update to your preferred Hugo version
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
-          extended: true
+          hugo-version: ${{ env.HUGO_VERSION }}
 
       - name: Build site
-        run: hugo --minify --config hugo.toml
+        run: hugo --minify
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
+    needs: build
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
