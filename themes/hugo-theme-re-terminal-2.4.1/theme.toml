@@ -1,9 +1,9 @@
-name = "re-Terminal"
+name = "mjacophoto.blog"
 license = "MIT"
 licenselink = "https://github.com/mirus-ua/hugo-theme-re-terminal/blob/main/LICENSE.md"
-description = "A simple, retro theme for Hugo."
-homepage = "https://github.com/mirus-ua/hugo-theme-re-terminal/"
-demosite = "https://re-terminal.nebrowser.com"
+description = "a photography showcase by marshall "mars" jacobsen"
+homepage = "marsjaco.github.io/mjacophoto.blog"
+demosite = "marsjaco.github.io/mjacophoto.blog"
 tags = [
   "blog",
   "clean",
@@ -23,8 +23,8 @@ features = ["blog", "shortcode", "syntax highlighting"]
 min_version = 0.128
 
 [author]
-name = "Mirus"
-homepage = "https://nebrowser.com"
+name = "mjaco"
+homepage = "marsjaco.github.io/mjacophoto.blog"
 
 [original]
 name = "panr"
