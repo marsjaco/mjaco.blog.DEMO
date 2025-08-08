@@ -27,7 +27,7 @@ jobs:
           hugo-version: ${{ env.HUGO_VERSION }}
 
       - name: Build site
-        run: hugo --minify
+        run: hugo --minify --environment prod
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
